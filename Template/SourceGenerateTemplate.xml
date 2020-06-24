@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SourceGenerateTemplate xmlns="http://tempuri.org/DataSourceTemplate.xsd">
+  <Templates>
+    <Name>Java</Name>
+    <!--
+    @Folder
+    @TableNameCamelU
+    @TableNameCamelL
+    @TableName
+    @TableDisplayName
+    @TableComment
+    @Coulmns
+    @KEY
+    -->
+    <ClassTemplace><![CDATA[
+package jp.co.tdk.business.dto.{@Folder};
+import jp.co.tdk.business.dto.common.DbCommon;
+/**
+ *{@TableDisplayName} {@TableComment}
+ *{@KEY}
+ */
+public class {@TableNameCamelU}Dto extends DbCommon{
+	public static final String TABLE = "{@TableName}";
+  {@Coulmns}
+}
+]]>
+    </ClassTemplace>
+    <!--
+    @ColumnComment
+    @DataType
+    @FieldName
+    @FieldNameCamelU
+    @FieldNameCamelL
+    @KEY
+    -->
+    <FieldTemplace><![CDATA[
+    /**
+     *{@FieldDisplayName} {@ColumnComment}
+     *{@KEY}
+     */
+    public {@DataType} {@FieldNameCamelL};]]>
+    </FieldTemplace>
+    <FileName>{@TableNameCamelU}Dto.java</FileName>
+    <IgnoreColumns>insert_date,insert_user,update_date,update_user</IgnoreColumns>
+  </Templates>
+  <Templates>
+    <Name>Java(形式2)</Name>
+    <!--
+    @Folder
+    @TableNameCamelU
+    @TableNameCamelL
+    @TableName
+    @TableDisplayName
+    @TableComment
+    @Coulmns
+    -->
+    <ClassTemplace>
+      <![CDATA[
+package jp.co.tdk.business.dto.{@Folder};
+import jp.co.tdk.business.dto.common.DbCommon;
+/**
+ *{@TableDisplayName} 
+ *{@TableComment}
+ *{@KEY}
+ */
+public class {@TableNameCamelU}Dto extends DbCommon{
+	public static final String TABLE = "{@TableName}";
+  {@Coulmns}
+}
+]]>
+    </ClassTemplace>
+    <!--
+    @ColumnComment
+    @DataType
+    @FieldName
+    @FieldNameCamelU
+    @FieldNameCamelL
+    @KEY
+    -->
+    <FieldTemplace>
+      <![CDATA[
+    public {@DataType} {@FieldNameCamelL};  //{@FieldDisplayName}{@ColumnComment}{@KEY}
+]]>
+    </FieldTemplace>
+    <FileName>{@TableNameCamelU}Dto.java</FileName>
+    <IgnoreColumns>insert_date,insert_user,update_date,update_user</IgnoreColumns>
+  </Templates>
+</SourceGenerateTemplate>
